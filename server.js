@@ -10,7 +10,7 @@ const express = require("express");
 const app = express();
 
 //sequelize
-const { sequelize } = require("./config/connection");
+const sequelize = require("./config/connection");
 
 //sessions
 //create express session

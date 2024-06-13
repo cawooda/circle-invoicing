@@ -1,7 +1,7 @@
 {
-  "name": "tech-blog",
+  "name": "circle-invoicing",
   "version": "1.0.0",
-  "description": "tech blog",
+  "description": "circle invoicing automation",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/cawooda/tech-blog.git"
+    "url": "https://github.com/cawooda/circle-invoicing"
   },
   "author": "Andrew Cawood",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cawooda/tech-blog/issues"
+    "url": "https://github.com/cawooda/circle_invoicing/issues"
   },
-  "homepage": "https://github.com/cawooda/tech-blog#readme",
+  "homepage": "https://github.com/cawooda/circle_invoicing#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bulma": "^1.0.1",
