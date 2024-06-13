@@ -4,7 +4,7 @@ const homeRoutes = require("./homeRoutes");
 const postRoutes = require("./postRoutes");
 const dayjs = require("dayjs");
 
-const demoTickers = require("./demoTicker.json");
+
 
 router.use("/", homeRoutes);
 router.use("/api", apiRoutes);

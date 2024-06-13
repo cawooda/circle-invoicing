@@ -6,34 +6,10 @@ const router = require("express").Router();
 const { RegisteredUser, Post, Comment } = require("../model");
 const postRoute = require("./postRoutes");
 
-<<<<<<< HEAD
-const siteTitle = 'Tech Blog';
-=======
 const siteTitle = "Site Title";
->>>>>>> parent of fb874ba (ter)
 
 router.use("/posts", postRoute);
 
-<<<<<<< HEAD
-router.get('/', async (req, res) => {
-	try {
-		const postData = await Post.findAll({
-			include: { all: true, nested: true },
-			order: [['created_at', 'DESC']],
-		});
-
-		const posts = await postData.map((post) => post.get({ plain: true }));
-
-		res.render('home', {
-			posts: posts,
-			siteTitle: siteTitle,
-			testData: req.session.testing ? req.session.testData : false,
-			loggedIn: req.session.loggedIn,
-			loggedOut: !req.session.loggedIn,
-			pageTitle: 'Home Page',
-		});
-	} catch (error) {}
-=======
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -50,7 +26,6 @@ router.get("/", async (req, res) => {
       pageTitle: "Home Page",
     });
   } catch (error) {}
->>>>>>> parent of fb874ba (ter)
 });
 
 router.get("/about", async (req, res) => {
