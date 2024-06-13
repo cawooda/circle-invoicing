@@ -1,4 +1,4 @@
 const RegisteredUser = require("./RegisteredUser");
-const Excel = require("./Excel");
+const Sheet = require("./Sheet");
 
-module.exports = { RegisteredUser, Excel };
+module.exports = { RegisteredUser, Sheet };

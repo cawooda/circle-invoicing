@@ -30,6 +30,8 @@ const sess = {
 };
 app.use(session(sess));
 
+app.use(testing);
+
 //routes
 const router = require("./controller");
 
@@ -62,24 +64,7 @@ function testing(req, _res, next) {
     req.session.testing = false;
   }
   next();
-
-  console.log("testing");
-  console.log(process.env.TESTING);
-  if (process.env.TESTING) {
-    req.session.testing = true;
-    req.session.testData = {
-      first_name: "Andrew",
-      last_name: "Cawood",
-      email: "cawooda@gmail.com",
-      password: "Secret!123",
-    };
-  } else {
-    req.session.testing = false;
-  }
-  next();
 }
-
-app.use(testing);
 
 app.use(router);
 

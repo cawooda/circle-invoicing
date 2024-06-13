@@ -1,32 +1,10 @@
-require("dotenv").config();
-const termsAddress = process.env.TERMSADDRESS;
-console.log(termsAddress);
-
 const router = require("express").Router();
-const { RegisteredUser, Post, Comment } = require("../model");
-const postRoute = require("./postRoutes");
+const { RegisteredUser } = require("../model");
 
-const siteTitle = "Site Title";
+const { siteTitle, termsAddress } = require("../config/siteInfo");
+const sheetRoutes = require("./sheetRoutes");
 
-router.use("/posts", postRoute);
-
-router.get("/", async (req, res) => {
-  try {
-    const postData = await Post.findAll({
-      include: { all: true, nested: true },
-    });
-
-    const posts = await postData.map((post) => post.get({ plain: true }));
-    res.render("home", {
-      posts: posts,
-      siteTitle: siteTitle,
-      testData: req.session.testing ? req.session.testData : false,
-      loggedIn: req.session.loggedIn,
-      loggedOut: !req.session.loggedIn,
-      pageTitle: "Home Page",
-    });
-  } catch (error) {}
-});
+router.use("/sheets", sheetRoutes);
 
 router.get("/about", async (req, res) => {
   console.log("home route reached, should call about layout");

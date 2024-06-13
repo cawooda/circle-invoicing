@@ -1,0 +1,28 @@
+{{!-- {{log this}} --}}
+{{#if loggedIn}}
+<div class="container content box">
+  <h2>New Sheet</h2>
+  <form data-userId="{{user_id}}" id="new-sheet-form">
+    
+    <div class="field">
+      <label class="label">Notes</label>
+      <div class="control">
+        <textarea id="note-input" class="textarea" rows="10" type="text"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Excel Sheet</label>
+      <div class="control">
+        <input id="file-input" class="textarea" rows="10" type="file" multiple>
+      </div>
+    </div>
+
+    <button id="new-post-btn" class="button is-primary">Submit</button>
+</div>
+
+</form>
+</div>
+
+<script src="/js/new-sheet.js"></script>
+{{/if}}

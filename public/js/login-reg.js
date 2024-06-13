@@ -37,7 +37,7 @@ async function submitUserLogin() {
       response.ok
         ? console.log("Login successful:", result)
         : console.log("Login unSuccessful:", result);
-      window.location.href = "/";
+      window.location.href = "/sheets";
     } catch (error) {
       console.log(JSON.stringify(error));
     }

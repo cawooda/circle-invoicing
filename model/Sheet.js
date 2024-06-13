@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Excel extends Model {}
+class Sheet extends Model {}
 
-Excel.init(
+Sheet.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,9 +19,10 @@ Excel.init(
   {
     hooks: {},
     sequelize,
+    freezeTableName: true,
     underscored: true,
-    modelName: "excel",
+    modelName: "sheet",
   }
 );
 
-module.exports = Excel;
+module.exports = Sheet;
